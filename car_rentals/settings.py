@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-vxz93h%#b88(4vb*86-2f3admxq1^s_$k9=ye5xq_sh+aim@35
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh','localhost']
 
 
 # Application definition
@@ -87,10 +87,10 @@ WSGI_APPLICATION = 'car_rentals.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE':'django.db.backends.postgresql',
-        'NAME':'verceldb',
-        'USER':'default',
-        'PASSWORD':'hbtqBUf2lME1',
-        'HOST':'ep-autumn-math-75513108-pooler.us-east-1.postgres.vercel-storage.com',
+        'NAME':'emperor',
+        'USER':'emperor_user',
+        'PASSWORD':'iJss3KWZ0uxpZVGUplwrg8VHKXXPrJ42',
+        'HOST':'dpg-cljmtkpll56s73bmk4o0-a.oregon-postgres.render.com',
         'PORT':'5432'
     }
 }
