@@ -1,0 +1,36 @@
+{% extends 'base/index.html' %}
+{% load static %}
+{% block content %}
+{% load humanize %}
+<div style="padding: 1em;">
+    <h5>Welcome {{request.user.email}}</h5>
+    <div class="">
+        <div class="row">
+            <div class="col">
+              <ul>
+                <a href="{% url  'add_car' %}"><li>Add Cars</li></a>
+                <a href="{% url 'logout' %}"><li>Logout</li></a>
+              </ul>
+            </div>
+            <div class="col">
+               <b>Last 10 Transactions</b>
+               <ul>
+
+                   {% for transaction in transactions %}
+                        <li>{{transaction.car_details.car_name}} || {{transaction.number_of_days}} days || {{transaction.payment_date}}</li>
+                   {% endfor %}
+               </ul>
+            </div>
+            <div class="col">
+                <b>Cars Registered || No. {{cars_value}}</b> <br>
+                <b>Cars  Available || No. {{cars}}</b> <br>
+                <b>Cars Rented Out || No. {{cars_out}}</b>
+            </div>
+            <div class="col">
+                <b>Total Cash Flow</b>
+                <h1>{{amount | floatformat:2 | intcomma}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

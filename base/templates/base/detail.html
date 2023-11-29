@@ -1,0 +1,31 @@
+{% extends 'base/index.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <div class="detail-holder">
+        <div class="detail-image-holder">
+           <!-- <img src="{{car_data.car_image}}" alt="car-image">-->
+
+           {% if car_data.car_image %}
+           <img src="{{car_data.car_image.url}}" alt="car-image" style="max-width: 50%;">
+           {% endif%}
+        </div>    
+        <div class="detail-car-details">
+           <h2>{{car_data.car_name}}</h2>
+           <p>{{car_data.brief_description_of_the_car}}</p>
+           <br>
+           <br>
+           <b>Type of Car: {{car_data.car_type}}</b> <br> <b>Capacity: {{car_data.no_of_seats}}</b> <br>
+           <b>Steering : {{car_data.car_category}}</b> <br>
+           <b>Booking Availability: {{car_data.car_availability}}</b> <br>
+           <b> Booking Charge: &#8358;{{car_data.amount_per_day}} /per day</b>
+           {% if car_data.car_availability %}
+           <a href="{% url 'make_payment' car_data.id %}"><button class=" btn-small btn-book-lg">Book Me</button></a>
+           {% else  %}
+           <button disabled class="btn-unavailable">Book Me</button>
+
+           {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

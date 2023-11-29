@@ -1,0 +1,45 @@
+{% extends 'base/index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="split-holder">
+    <!-- Split one -->
+    <div class="split-left">
+        <img src="{%  static 'base/assets/Ads1.png' %}" alt="">
+    </div>
+    <!-- Split two -->
+    <div class="split-right">
+        <img src="{%  static 'base/assets/Ads2.png' %}" alt="">
+    </div>
+</div>
+
+
+<!-- INSERT SINGLE CARS HERE AND LOOP THROUGH -->
+
+
+
+
+<div class="main-holder">
+
+    {% for car in all_cars %}
+    <div class="single-car">
+        <b>{{car.car_name}}</b> <br> <br>
+        <b style="color: gray;">{{car.car_type}}</b> <br> <br>
+        <!-- <img src="{% static 'base/assets/car.png' %}" alt="car-image"> -->
+        <img src="{{car.car_image.url}}" alt="car-image" class="img-small">
+        <br>
+        <p>
+            <span><img class="icon" src="{%  static 'base/assets/profile-2user.png' %}" alt="no of people"> {{car.no_of_seats}}</span>
+            <span><img class="icon" src="{% static 'base/assets/gas-station.png' %}" alt="type of car"> {{car.car_category}}</span>
+        </p>
+        <hr>
+        <p>
+            <b>&#8358;{{car.amount_per_day}}/day</b>
+            <a href="{%  url 'detail_page' car.pk %}"><button class="btn-small">Rent Now</button></a>
+        </p> 
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

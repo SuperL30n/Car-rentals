@@ -1,0 +1,29 @@
+{% extends 'base/index.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    
+    
+    <form action="" method="post" class="login-holder">
+        <h4>Login</h4>
+        {% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" class="form-control">
+            </div>
+            <br> <br>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-outline-success btn-long">Login</button>
+    </form>
+</div>
+
+{% endblock %}

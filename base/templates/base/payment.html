@@ -1,0 +1,105 @@
+{% extends 'base/index.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <div class="payment-holder">
+
+       <div style="padding: 1em;">
+        <b>Billing info</b>
+        <!-- <form action="{% url 'make_payment' car_data.id %}" method="post" id="paymentForm"> -->
+        <form action="{% url 'make_payment' car_data.id %}" method="post" id="">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <label for="full_name">Fullname:</label> 
+                  <input type="text" name="full_name" id="full_name" class="form-control"> 
+                </div> 
+                <div class="col">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" name="phone_number" id="phone_number" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="email-address">Email Address:</label>
+                    <input type="text" name="email-address" id="email-address" class="form-control">
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <label for="address">Address:</label>
+                    <input type="text" name="address" id="address" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="town_city">Town/City:</label>
+                    <input type="text" name="town_city" id="town_city" class="form-control">
+                </div>
+            </div>
+            <br>
+            <!-- Row 3 -->
+            <hr>
+            <br>
+             <div class="row">
+                <b>Rental Info</b>
+                <br>
+                <hr>
+                <b>Pick Up</b>
+                <div class="col">
+                    <label for="pick_location">Location:</label>
+                    <input type="text" name="pick_location" id="pick_location" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="pick_date">Date:</label>
+                    <input type="date" name="pick_date" id="pick_date" class="form-control">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+               
+                <br>
+                <hr>
+                <b>Drop Off</b>
+                <div class="col">
+                    <label for="drop_location">Location:</label>
+                    <input type="text" name="drop_location" id="drop_location" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="drop_date">No of Days:</label>
+                    <input type="number" name="drop_date" id="drop_date"  class="form-control">
+                </div>
+            </div>
+            <br>
+            <!-- {{form.as_p}} -->
+            <button type="submit" class="btn btn-outline-success">Make Payments</button>
+            <!-- <button type="submit" onclick="payWithPaystack()" class="btn btn-outline-success">Make Payments</button> -->
+            </form>
+
+
+       </div>
+        
+       
+       <div class="detail-car-details detail-car-details-left">
+           <h2>{{car_data.car_name}}</h2>
+           {% if car_data.car_image %}
+           <img src="{{car_data.car_image.url}}" alt="car-image" style="max-width: 70%;">
+           {% endif%}
+           <p>{{car_data.brief_description_of_the_car}}</p>
+           <br>
+           <br>
+           <b>Type of Car: {{car_data.car_type}}</b> <br> <b>Capacity: {{car_data.no_of_seats}}</b> <br>
+           <b>Steering : {{car_data.car_category}}</b> <br>
+           <b>Booking Availability: {{car_data.car_availability}}</b> <br>
+           <b> Booking Charge: &#8358;{{car_data.amount_per_day}} /per day</b>
+        </div>
+        </div>
+    </div>
+
+
+    <script>
+    var csrftoken = "{{csrf_token}}"
+    var id = "{{car_data.id}}"
+    </script>
+
+{% endblock %}

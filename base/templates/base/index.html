@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base/css/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/index.css' %}">
+    <title>Morent Rental Services || Welcome </title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header-holder">
+       <a href="{% url 'landing_page' %}"><img src="{% static 'base/assets/Logo.png' %}" alt="Morent-logo"></a>
+    </div>
+
+    {% block content %}
+     
+
+
+
+    {% endblock %}
+
+    <!-- END LOOPING HERE -->
+    <div class="footer">
+        <div>
+            <img src="{% static 'base/assets/Logo.png' %}" alt="Morent-logo">
+            <p>Our vision is to provide convenience <br> 
+            and help increaase your sales Business.
+            </p>
+        </div>
+        <div class="footer-1">
+            <b>About</b>
+            <ul>
+                <li>How it works</li>
+                <li>Featured</li>
+                <li>Partnership</li>
+               <a href="{% url 'dashboard' %}"> <li>Administrative</li></a>
+            </ul>  
+        </div>
+        <div class="footer-2">
+            <b>Community</b>
+            <ul>
+                <li>Events</li>
+                <li>Blog</li>
+                <li>Podcast</li>
+                <li>Invite a Friend</li>
+            </ul>
+        </div>
+        <div class="footer-3">
+           <b>Socials</b>
+           <ul>
+            <li>Discord</li>
+            <li>Instagram</li>
+            <li>Twitter</li>
+            <li>Facebook</li>
+           </ul>
+        </div>
+        
+    </div>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="{% static 'base/js/payment.js' %}"></script>
+    <script src="{% static 'base/js/js/bootstrap.js' %}"></script>
+</body>
+</html>
