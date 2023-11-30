@@ -165,3 +165,47 @@ li{
     line-height: 2em;
     margin-left: 12em;
 }
+
+.small-display{
+    display: none;
+}
+/* Mobile Screen Design */
+
+@media screen and (max-width:576px){
+   .footer-2{
+    display: none;
+   }
+   .footer-3{
+    display: none;
+   }
+   .footer-1{
+    display: none;
+   }
+   .split-right{
+    display: none;
+   }
+   .split-left{
+    display: none;
+   }
+   .main-holder{
+    display:contents;
+    
+   }
+   .single-car{
+    /* width: 200px; */
+    margin-left: 2em;
+   }
+   .small-display{
+    display: block;
+    padding: 1em;
+    border: 1px solid #2a60B7;
+    margin: 1.5em;
+    background-color: #2a60B7;
+   }
+   .detail-holder{
+    display: contents;
+   }
+   .payment-holder{
+    display: contents;
+   }
+}
