@@ -2,12 +2,13 @@ from ast import mod
 from email.policy import default
 from hashlib import blake2b
 from django.db import models
+import os
 
 # Create your models here.
 class Car(models.Model):
     car_name = models.CharField(max_length=255, null=False, blank=False)
     car_type = models.CharField(max_length=255, null=False, blank=False)
-    car_image = models.ImageField(upload_to='upload/', null=True, blank=True)
+    car_image = models.ImageField(upload_to='./tmp/upload/', null=True, blank=True)
     brief_description_of_the_car = models.TextField(max_length=1024, null=False, blank=False)
     car_category = models.CharField(max_length = 255, null=False, blank = False)
     no_of_seats = models.IntegerField(null=True, blank=True, default=1)
