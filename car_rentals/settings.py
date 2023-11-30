@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django.contrib.staticfiles',
     'rest_framework',
-    'cloudinary',
-    'base.apps.BaseConfig'
+    'base.apps.BaseConfig',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -132,6 +132,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+cloudinary.config(
+    cloud_name="dxrxrd21n",
+    api_key="678296882941111",
+    api_secret = "1sv9scu3d7mSrvamqxhiLex8OMk",
+    secure=True
+
+)
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
@@ -148,11 +155,3 @@ PAYSTACK_SECRET_KEY='sk_test_ee17668e65b03a5d306271b6a18a6871d09370fc'
 
 MEDIA_ROOT = os.path.join(BASE_DIR /'media')
 MEDIA_URL = '/media/'
-
-cloudinary.config(
-    cloud_name="dxrxrd21n",
-    api_key="678296882941111",
-    api_secret = "1sv9scu3d7mSrvamqxhiLex8OMk",
-    secure=True
-
-)
