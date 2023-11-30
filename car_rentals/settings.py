@@ -152,6 +152,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 PAYSTACK_PUBLIC_KEY ='pk_test_5866756b7c065aeb25ae40e0d0ae360e0defbd99'
 PAYSTACK_SECRET_KEY='sk_test_ee17668e65b03a5d306271b6a18a6871d09370fc'
-
-MEDIA_ROOT = os.path.join(BASE_DIR /'media')
+# 
+# MEDIA_ROOT = os.path.join(BASE_DIR /'media')
 MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
