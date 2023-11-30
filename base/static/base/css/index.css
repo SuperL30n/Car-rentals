@@ -208,4 +208,7 @@ li{
    .payment-holder{
     display: contents;
    }
+   .detail-car-details{
+    height: 500px;
+   }
 }
