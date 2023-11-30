@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
+import cloudinary
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
-    'rest_framework'
+    'rest_framework',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -146,3 +148,11 @@ PAYSTACK_SECRET_KEY='sk_test_ee17668e65b03a5d306271b6a18a6871d09370fc'
 
 MEDIA_ROOT = os.path.join(BASE_DIR /'media')
 MEDIA_URL = '/media/'
+
+cloudinary.config(
+    cloud_name="dxrxrd21n",
+    api_key="678296882941111",
+    api_secret = "1sv9scu3d7mSrvamqxhiLex8OMk",
+    secure=True
+
+)

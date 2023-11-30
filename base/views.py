@@ -8,6 +8,7 @@ from base.paystack import make_payment, verify_payment
 from django.contrib.auth  import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from base.emails import send_email
+from cloudinary.uploader import upload
 
 
 # Create your views here.
@@ -89,6 +90,12 @@ def add_car(request):
             print(request.FILES)
             record = form.save(commit=False)
             record.car_image = image
+            # Upload image to cloudinary
+            _url = upload(image)
+            pub_id = _url['public_id']
+            url = f"https://res.cloudinary.com/dxrxrd21n/image/upload/f_auto,q_auto/{pub_id}"
+            print(url)
+            record.car_image_urls = url
             record.save()
             return redirect(dashboard)
     context = {'form':form}

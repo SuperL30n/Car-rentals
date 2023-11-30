@@ -14,6 +14,7 @@ class Car(models.Model):
     amount_per_day = models.FloatField(default=5000, null=False, blank=False)
     car_availability = models.BooleanField(default=True)
     date_added = models.DateTimeField(auto_now_add=True)
+    car_image_urls = models.URLField(null=False, blank=False, default="https://res.cloudinary.com/dxrxrd21n/image/upload/f_auto,q_auto/ooybbpi6zlzdllvuukuv")
 
     def __str__(self) -> str:
         return self.car_name
