@@ -93,7 +93,7 @@ def send_email(email:str, car_name,number_of_days,_amount_payable):
     msg = MIMEText(template, 'html')
     msg['From'] = fromaddr
     msg['To'] = toaddr
-    msg['Subject'] = "Newsletter from Arabeauty"
+    msg['Subject'] = "MONRENT Receipt"
 
     debug = False
     if debug:
