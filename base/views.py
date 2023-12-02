@@ -14,9 +14,9 @@ from cloudinary.uploader import upload
 # Create your views here.
 def landing_page(request):
     """This Will Return All Cars Both Booked and UnAvailable"""
-    all_cars = Car.objects.all()
+    # all_cars = Car.objects.all()
     """This Will Return All Cars that are only available to be booked """
-    available_cars = Car.objects.filter(car_availability=True)
+    all_cars = Car.objects.filter(car_availability=True)
     context = {'all_cars':all_cars}
     return render(request, 'base/main.html', context)
 
@@ -52,8 +52,8 @@ def payment(request,pk):
                                             dropoff_location=drop_location,number_of_days=number_of_days, payment_amount= int(_amount_payable),
                                             payment_ref=_data['reference'],car_details=car_data) 
         payment.save()
-        print(request.POST)
-        car_data.objects.update(car_availability=False)
+        # print(request.POST)
+        car_data.car_availability = False
         car_data.save()
         send_email(email=email_address,car_name=car_data.car_name,_amount_payable=_amount_payable, number_of_days=number_of_days)
 
