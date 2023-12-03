@@ -44,7 +44,7 @@
                 <li>Events</li>
                 <li>Blog</li>
                 <li>Podcast</li>
-                <li>Invite a Friend</li>
+               <a href="{% url 'faqs' %}"><li>FAQ's</li></a> 
             </ul>
         </div>
         <div class="footer-3">
@@ -60,6 +60,7 @@
     </div>
     <script src="https://js.paystack.co/v1/inline.js"></script>
     <script src="{% static 'base/js/payment.js' %}"></script>
+    <script src="{% static 'base/js/scripts.js' %}"></script>
     <script src="{% static 'base/js/js/bootstrap.js' %}"></script>
 </body>
 </html>

@@ -169,6 +169,15 @@ li{
 .small-display{
     display: none;
 }
+
+.question-holder{
+    cursor:pointer ;
+   
+}
+
+.answer-holder{
+    display: none;
+}
 /* Mobile Screen Design */
 
 @media screen and (max-width:576px){

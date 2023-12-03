@@ -12,6 +12,7 @@ urlpatterns = [
     path('cars/dashboard/',views.dashboard, name="dashboard"),
     path('cars/add/',views.add_car,name="add_car"),
     path('login/',views.login_user, name="login_user"),
-    path('logout/',views.logout_user, name="logout")
+    path('logout/',views.logout_user, name="logout"),
+    path('cars/faqs',views.faq_page, name="faqs")
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
