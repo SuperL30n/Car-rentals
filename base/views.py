@@ -147,4 +147,6 @@ def feedback_page(request):
     return render(request,'base/feedback.html', context)
 
 def feedback_success(request):
-    return render(request,'confirm.html')
+    all_cars = Car.objects.filter(car_availability=True)
+    context = {'all_cars':all_cars}
+    return render(request,'base/confirm.html', context)

@@ -4,5 +4,28 @@
 <div class="container">
     <h4>Feedback Submitted!</h4>
     <a href="{% url 'landing_page' %}" class="btn btn-outline-primary">Go back Home</a>
+    <hr>
+    <b>More Cars</b>
+    <div class="main-holder">
+
+        {% for car in all_cars %}
+        <div class="single-car">
+            <b>{{car.car_name}}</b> <br> <br>
+            <b style="color: gray;">{{car.car_type}}</b> <br> <br>
+            <!-- <img src="{% static 'base/assets/car.png' %}" alt="car-image"> -->
+            <img src="{{car.car_image_urls}}" alt="car-image" class="img-small">
+            <br>
+            <p>
+                <span><img class="icon" src="{%  static 'base/assets/profile-2user.png' %}" alt="no of people"> {{car.no_of_seats}}</span>
+                <span><img class="icon" src="{% static 'base/assets/gas-station.png' %}" alt="type of car"> {{car.car_category}}</span>
+            </p>
+            <hr>
+            <p>
+                <b>&#8358;{{car.amount_per_day}}/day</b>
+                <a href="{%  url 'detail_page' car.pk %}"><button class="btn-small">Rent Now</button></a>
+            </p> 
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
