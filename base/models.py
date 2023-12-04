@@ -1,6 +1,4 @@
-from ast import mod
-from email.policy import default
-from hashlib import blake2b
+
 from django.db import models
 from cloudinary.models import CloudinaryField
 import os
@@ -38,4 +36,15 @@ class Payments(models.Model):
     payment_date=models.DateField(auto_now_add=True)
     car_details = models.ForeignKey(Car, on_delete=models.CASCADE,null=False, blank=False)
 
-    
+
+class Feedback(models.Model):
+    full_name = models.CharField(max_length= 255, null=False, blank=False)
+    phone_number = models.CharField(max_length = 255, null=False, blank=False)
+    email_address = models.CharField(max_length = 255, null=False, blank=False)
+    car_category = models.CharField(max_length = 255, null=False, blank=False)
+    vehicle_cleanliness = models.CharField(max_length=255, null=False, blank=False)
+    pickup_and_dropoff = models.CharField(max_length = 255, null=False, blank=False)    
+    staff_professionalism = models.CharField(max_length= 3055, null=False, blank=False)
+
+    def __str__(self):
+        return "Feedback By" + self.full_name

@@ -79,23 +79,23 @@ WSGI_APPLICATION = 'car_rentals.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    'default':{
-        'ENGINE':'django.db.backends.postgresql',
-        'NAME':'emperor',
-        'USER':'emperor_user',
-        'PASSWORD':'iJss3KWZ0uxpZVGUplwrg8VHKXXPrJ42',
-        'HOST':'dpg-cljmtkpll56s73bmk4o0-a.oregon-postgres.render.com',
-        'PORT':'5432'
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default':{
+#         'ENGINE':'django.db.backends.postgresql',
+#         'NAME':'emperor',
+#         'USER':'emperor_user',
+#         'PASSWORD':'iJss3KWZ0uxpZVGUplwrg8VHKXXPrJ42',
+#         'HOST':'dpg-cljmtkpll56s73bmk4o0-a.oregon-postgres.render.com',
+#         'PORT':'5432'
+#     }
+# }
 
 
 

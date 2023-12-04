@@ -1,7 +1,7 @@
 import re
 from django.shortcuts import redirect, render
 from django.urls import is_valid_path
-from base.models import Car, Payments 
+from base.models import Car, Payments, Feedback
 from rest_framework.parsers import JSONParser
 from base.forms import AddCarForm, PaymentForm
 from base.paystack import make_payment, verify_payment
@@ -9,7 +9,6 @@ from django.contrib.auth  import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from base.emails import send_email
 from cloudinary.uploader import upload
-
 
 # Create your views here.
 def landing_page(request):
@@ -119,3 +118,30 @@ def logout_user(request):
 def faq_page(request):
     context = {}
     return render(request, 'base/faq-page.html',context)
+
+
+def customer_support(request):
+    context = {}
+    return render(request,'base/support.html',context)
+
+def feedback_page(request):
+    if request.method == 'POST':
+        full_name = request.POST['full_name']
+        phone_number= request.POST['phone_number']
+        email_address= request.POST['email-address']
+        car_category= request.POST['car-category']
+        cleanliness = request.POST['vehicle-cleanliness']
+        pickup_and_dropoff = request.POST['pickup_and_dropoff']
+        staff_professionalism = request.POST['staff-professionalism']
+
+        feedback = Feedback.objects.create(full_name=full_name, phone_number=phone_number,email_address=email_address
+                                           ,car_category=car_category,vehicle_cleanliness=cleanliness,
+                                           pickup_and_dropoff= pickup_and_dropoff,
+                                           staff_professionalism=staff_professionalism)
+        feedback.save()
+        """SEND EMAIL NOTIFYING THEM ABOUT THEIR FEEDBACK BEING RECORDED"""
+        return redirect(landing_page)
+
+
+    context = {}
+    return render(request,'base/feedback.html', context)

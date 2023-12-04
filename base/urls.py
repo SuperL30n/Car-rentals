@@ -13,6 +13,8 @@ urlpatterns = [
     path('cars/add/',views.add_car,name="add_car"),
     path('login/',views.login_user, name="login_user"),
     path('logout/',views.logout_user, name="logout"),
-    path('cars/faqs',views.faq_page, name="faqs")
+    path('cars/faqs',views.faq_page, name="faqs"),
+    path('cars/feedback', views.feedback_page, name="cusomer_feedback"),
+    path('cars/support/', views.customer_support, name="customer_support")
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
