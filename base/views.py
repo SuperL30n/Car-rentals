@@ -140,8 +140,11 @@ def feedback_page(request):
                                            staff_professionalism=staff_professionalism)
         feedback.save()
         """SEND EMAIL NOTIFYING THEM ABOUT THEIR FEEDBACK BEING RECORDED"""
-        return redirect(landing_page)
+        return redirect(feedback_success)
 
 
     context = {}
     return render(request,'base/feedback.html', context)
+
+def feedback_success(request):
+    return render(request,'confirm.html')
