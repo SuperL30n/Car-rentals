@@ -12,9 +12,7 @@
 
 /* Split Holder or Small Cards Holder after header */
 .split-holder{
-    /* border: 1px solid black; */   
-    display: flex;
-  justify-content: space-between;
+    /* border: 1px solid black; */    
 }
 
 .split-left{
@@ -26,7 +24,7 @@
 .split-right{
     /* border: 1px solid black; */
     width: 48%;
-    
+    margin-left: 50%;
     margin-top: -23em;
 }
 
