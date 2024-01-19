@@ -19,13 +19,14 @@
     /* border: 1px solid black; */
     margin-left: 1em;
     width: 48%;
+    display: inline-block;
 }
 
 .split-right{
     /* border: 1px solid black; */
     width: 48%;
-    margin-left: 50%;
-    margin-top: 23em;
+   
+    display: inline-block;
 }
 
 /* footer styling */
