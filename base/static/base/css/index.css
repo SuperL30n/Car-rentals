@@ -14,7 +14,7 @@
 .split-holder{
     /* border: 1px solid black; */   
     display: flex;
-    gap: 10em; 
+  justify-content: space-between;
 }
 
 .split-left{
